@@ -1,1 +1,1 @@
-main = putStrLn "I hope this works"
+main = putStrLn "This has worked"
