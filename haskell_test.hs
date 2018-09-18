@@ -1,1 +1,1 @@
-main = putStrLn "Big Fucking Shit"
+main = putStrLn "I hope this works"
