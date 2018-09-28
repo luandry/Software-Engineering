@@ -1,3 +1,5 @@
+module BTree where
+
 data Tree = Leaf | Node Int Tree Tree deriving Show
 
 treeDepth :: Tree -> Int
