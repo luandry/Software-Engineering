@@ -40,6 +40,6 @@ treeMax (Node x leftSubtree rightSubtree) =
 --lca m n (Node x leftSubtree rightSubtree) | has m (Node x leftSubtree Leaf) && has n (Node x Leaf rightSubtree) = Just x
 --                                          | otherwise = lca m n leftSubtree <|> lca m n rightSubtree
 lca :: Int -> Int -> Tree -> Int
-lca m n ~(Node x leftSubtree rightSubtree) | n < x     = lca m n leftSubtree
-                      					   | m > x     = lca m n rightSubtree
+lca m n ~(Node x leftSubtree rightSubtree) | n < x = lca m n leftSubtree
+                      					   | m > x = lca m n rightSubtree
                       					   | otherwise = x
