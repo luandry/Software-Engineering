@@ -31,12 +31,15 @@ treeMax Leaf = 0
 treeMax (Node x leftSubtree rightSubtree) = 
  maximum [x, treeMax leftSubtree, treeMax rightSubtree]
 
-
---has :: Eq a => a -> Tree a -> Bool
+--has :: Int -> Tree -> Bool
 --has _ Leaf = False
---has e (Node v leftSubtree rightSubtree) = v == e || has e leftSubtree || has e rightSubtree 
+--has e (Node x leftSubtree rightSubtree) = x == e || has e leftSubtree || has e rightSubtree 
 
---lca :: Ord a => a -> a -> Tree a -> Maybe a
+--lca :: Int -> Int -> Tree -> Maybe Int
 --lca _ _ Leaf = Nothing
---lca m n (Node v leftSubtree rightSubtree) | has m (Node v leftSubtree Nil) && has n (Node v Leaf rightSubtree) = Just v
+--lca m n (Node x leftSubtree rightSubtree) | has m (Node x leftSubtree Leaf) && has n (Node x Leaf rightSubtree) = Just x
 --                                          | otherwise = lca m n leftSubtree <|> lca m n rightSubtree
+lca :: Int -> Int -> Tree -> Int
+lca m n ~(Node x leftSubtree rightSubtree) | n < x     = lca m n leftSubtree
+                      					   | m > x     = lca m n rightSubtree
+                      					   | otherwise = x
