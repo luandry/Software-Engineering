@@ -2,9 +2,9 @@ name:                TesterProject
 version:             0.1.0.0
 github:              "githubuser/TesterProject"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "Luan Williams"
+maintainer:          "willialu@tcd.ie"
+copyright:           "Luan Williams"
 
 extra-source-files:
 - README.md
@@ -35,6 +35,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - TesterProject
+    - DAG
 
 tests:
   TesterProject-test:

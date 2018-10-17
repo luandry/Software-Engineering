@@ -1,4 +1,5 @@
 import BTree
+import Data.Graph.DAG.Edge
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
@@ -28,6 +29,12 @@ main = hspec $ do
    let t = Node 3 (Node 2 Leaf Leaf) (Node 4 Leaf Leaf)
    let u = (addNewMax t)
    (treeMax u) `shouldBe` 5
+
+ describe "Find the Lowest Common Ancestor of two Nodes in the Binary Tree" $ do
+  it "LCA is Functioning" $ do 
+   let t = Node 12 (Node 10 (Node 8 Leaf Leaf)(Node 11 Leaf Leaf))(Node 14 Leaf Leaf)
+   (lca 8 11 t) `shouldBe` 10
+
  
 
 
